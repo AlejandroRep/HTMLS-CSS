@@ -1,0 +1,245 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Clases-Utilitarias */
+.container {/*cortes-los-laterales*/
+    width: 80%;
+    max-width: 1280px;/*sitio-maximo-anchura*/
+    margin-left: auto;/*posicionara modo-auto*/
+    margin-right: auto;/*posicionara modo-auto*/
+}
+
+/*Colores*/
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #214037;
+}
+
+.btn-secondary {
+    color: white;
+    background-color: #77A699;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #A6464E;
+}
+
+.btn-info {
+    color: black;
+    background-color: #E2F2C9;
+}
+
+.btn-dark {
+    color: white;
+    background-color: #2F2E2E;
+}
+
+
+
+/*HEADER*/
+.bg-header { 
+    background-image: url('../assets/img/bg-header.jpg');/*Clase para img-fondo*/ 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /*propiedad-adapata a la img*/
+    height: 18.75em; 
+    /*em toma el tamaño del font-size de este contenedor,sino esta sube un nivel , sino sube al html que tiene 16px font-size */
+}
+
+.bg-navbar {/*fondo-trasparente*/
+    background-color: rgba(0, 0, 0, 0.60);/*trasparencia*/
+    padding: 1.5em 0;
+}
+
+.navbar {/*contorno-logo-menu*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-brand {/*logo-menu*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /*subrayado-ahref*/
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1em;/*separacion*/
+    font-weight: 500; /*Groesor-topògrafia*/
+}
+
+.navbar-brand img {
+    width: 2em;/*estos 2em toman el tamaño del font-size que en este caso son 2rem*/
+}
+
+.navbar-nav { /*contorno-menu*/
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.nav-link {/*menu*/
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3em;
+}
+
+.nav-link:hover { /*efecto al pasar el mouse*/
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+/*MAIN*/
+
+.main{/*esta empuja los elementos*/ 
+    background-color: white;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    margin-top: -2em;
+}
+.main-title{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* CARD */
+.card {
+    background-color: #1E2601;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;/*separ tarjetas*/
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.card-body p {
+    font-weight: 200;
+}
+
+/*Nosotros*/
+.nosotros{/*contenedor-entorno*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color:#2F2E2E;
+}
+.nosotros-col-img{
+    background-image: url('../assets/img/nosotros.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;/*si trabajamos con flexbox es necesario la img al 100%  para verse*/
+    height: 21.875em;
+    order: 2;
+}
+.nosotros-col-text{
+    order: 1;
+}
+.nosotros-body{
+    padding: 1em;
+    text-align: center;
+    color: white;
+}
+.nosotros-body h2{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.nosotros-body p {
+    font-weight: 200;
+}
+/* FOOTER */
+.bg-footer {
+    background-color: #214037;
+    color: #E2F2C9;
+}
+
+.bg-footer p {
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+}
+
+/*Media-Queries-Pantallas-Grandes*/
+
+@media (min-width: 837px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 837px) {
+    .navbar-brand {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+}
+
+/*media-queries-main*/
+
+@media (min-width: 768px) {
+    .tienda {
+        display: flex;
+        gap: 1em; /*separacion-a-los-costados*/
+    }
+}
+
+/*media-queries-nosotros*/
+@media (min-width: 576px) {
+    .nosotros-col-img {
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {/*segunda-medida-cascada*/
+    .nosotros {
+        flex-direction: row;
+    }
+
+    .nosotros-col-img {
+        order: 1;
+        flex: 1 1 0;/*flex-grown,flex-shrink,flex-basis*/
+    }
+
+    .nosotros-col-text {
+        order: 2;
+        flex: 1 1 0;
+    }
+}
